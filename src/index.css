@@ -279,21 +279,35 @@ main {
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   padding: 2rem 2rem;
+  transition: var(--transition);
+  text-align: center;
 }
 
-.person-img {
+.img-container {
+  /* display: flex;
+  justify-content: center; */
+  position: relative;
   height: 200px;
   width: 200px;
   border-radius: 50%;
-}
-.img-container {
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
 }
 
-.person h1,
-.person p {
-  text-align: center;
+.img-container::before {
+  content: " ";
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: var(--primary-500);
+  top: -0.5rem;
+  left: 0.5rem;
+}
+.person-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
 }
 
 .btn-container {
@@ -305,9 +319,9 @@ main {
 }
 
 .btn-sur {
-  display: block;
-  /* text-align: center; */
-  margin: 0 auto;
+  /* display: block;
+  
+  margin: 0 auto; */
   margin-top: 1rem;
   padding: 0.5rem 1rem;
 }
